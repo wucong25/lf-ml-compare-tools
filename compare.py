@@ -179,11 +179,11 @@ def main():
                 if line == '':
                     continue
 
-                if 'end of ModelLink Arguments' in line:
+                if 'end of MindSpeed-LLM Arguments' in line:
                     print(line)
                     break
 
-                if 'ModelLink Arguments' in line:
+                if 'MindSpeed-LLM Arguments' in line:
                     begin = True
                     print(line)
                     continue
@@ -293,9 +293,9 @@ def check_lf_constant(lf_args):
             tip = str(tips_nums) + '、'
             tips_nums = tips_nums + 1
             if llamafactory_constant_args[key] == 'None':
-                tip = tip + '请检查LLamafactory参数：{llamafactory_constant_args[key]}是否已删除\n'
+                tip = tip + '请检查LLamafactory参数：{}是否已删除\n'.format(llamafactory_constant_args[key])
             else:
-                tip = tip + '请检查Llamafactory参数：{llamafactory_constant_args[key]}的值是否为{llamafactory_constant_args[value]}\n'
+                tip = tip + '请检查Llamafactory参数：{}的值是否为{}\n'.format(llamafactory_constant_args[key], llamafactory_constant_args[value])
             results.append(tip)
 
 
